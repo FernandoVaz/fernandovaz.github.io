@@ -30,7 +30,7 @@ twitter_username: FernandoVaz
 github_username:  FernandoVaz
 
 # Build settings
-theme: minima
+theme: jekyll-theme-midnight
 plugins:
   - jekyll-feed
 
