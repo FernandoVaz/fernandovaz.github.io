@@ -1,5 +1,109 @@
 <header class="site-header">
 
+    <style type="text/css">
+        #canvasSection { position: absolute; width: 100%; height: 200px; z-index: -1; background-color: #ffffff;}
+    </style>
+
+    <script type="text/javascript">
+        var circle = 0;
+        var movingBall = 0;
+        var movingBall2 = 0;
+        var movingBall3 = 0;
+        var movingBall4 = 0;
+        var movingBall5 = 0;
+        var movingBallDelay = 240;
+        var ballStep = 30;
+
+        function init() {
+            window.requestAnimationFrame(draw);
+        }
+
+        function draw()
+        {
+            var canvas = document.getElementById("canvasSection");
+            var height = canvas.getBoundingClientRect().height;
+            var width = canvas.getBoundingClientRect().width;
+            var radius = height/4;
+            var v_endBoundary = width + radius;
+            canvas.setAttribute('width', width);
+            canvas.setAttribute('height', height);
+
+            var ctx = canvas.getContext('2d');
+
+            ctx.clearRect(0,0, width, height);
+            ctx.beginPath();
+            ctx.arc(movingBall, radius*2, radius, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(177, 177, 177, 1)";
+            ctx.fill();
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.arc(movingBall2 - movingBallDelay, radius*2, radius, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(177, 177, 177, 0.7)";
+            ctx.fill();
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.arc(movingBall3 - movingBallDelay*2, radius*2, radius, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(177, 177, 177, 0.5)";
+            ctx.fill();
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.arc(movingBall4 - movingBallDelay*3, radius*2, radius, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(177, 177, 177, 0.3)";
+            ctx.fill();
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.arc(movingBall5 - movingBallDelay*4, radius*2, radius, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(177, 177, 177, 0.1)";
+            ctx.fill();
+            ctx.save();
+
+            if(circle > 2* Math.PI)
+                circle = 0;
+            else
+                circle = circle + 0.07;
+
+            if(movingBall >= (v_endBoundary + movingBallDelay * 8))
+                movingBall = 0;
+            else
+                movingBall = movingBall + ballStep;
+
+            if(movingBall2 >= (v_endBoundary + movingBallDelay * 7))
+                movingBall2 = 0 - movingBallDelay;
+            else
+                movingBall2 = movingBall2 + ballStep;
+
+            if(movingBall3 >= (v_endBoundary + movingBallDelay * 6))
+                movingBall3 = 0 - movingBallDelay * 2;
+            else
+                movingBall3 = movingBall3 + ballStep;
+
+            if(movingBall4 >= (v_endBoundary + movingBallDelay * 5))
+                movingBall4 = 0 - movingBallDelay * 3;
+            else
+                movingBall4 = movingBall4 + ballStep;
+
+            if(movingBall5 >= (v_endBoundary + movingBallDelay * 4))
+                movingBall5 = 0 - movingBallDelay * 4;
+            else
+                movingBall5 = movingBall5 + ballStep;
+
+
+            window.requestAnimationFrame(draw);
+        }
+
+        init();
+    </script>
+
+    <canvas id="canvasSection">Error, canvas no supported</canvas>
     <div class="wrapper">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
