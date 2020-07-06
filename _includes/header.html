@@ -93,7 +93,8 @@
                 this.y = m.y + Math.sin(this.theta) * this.t;
                 c.beginPath();
                 //c.lineWidth = this.r;
-                c.arc(ls.x, ls.y, 9, 0, Math.PI * 2, true);
+                ctx.moveTo(20, 20);
+                ctx.quadraticCurveTo(0, -100, 800, 0);
                 c.strokeStyle = this.cc;
                 c.fillStyle = this.cc;
                 c.fill();
@@ -104,7 +105,10 @@
         }
         function anim() {
             requestAnimationFrame(anim);
-            c.fillStyle = "rgba(0,0,0,0.1)";
+            var my_gradient = c.createLinearGradient(0, 0, 0, 170);
+            my_gradient.addColorStop(0, "black");
+            my_gradient.addColorStop(1, "white");
+            c.fillStyle = my_gradient;
             c.lineJoin = "round";
             c.fillRect(0, 0, cn.width, cn.height);
             a.forEach(function(e, i) {
