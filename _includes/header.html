@@ -5,116 +5,32 @@
     </style>
 
     <script type="text/javascript">
-        var cn;
-        //= document.getElementById('cw');
-        var c;
-        var u = 10;
-        const m = {
-            x: innerWidth / 2,
-            y: innerHeight * 2
+        window.onload = function() {
+            var canvas = document.getElementById('canvasSection');
+            var ctx = canvas.getContext('2d');
+            var numberOfStars = 300;
+            canvas.height = innerHeight;
+            canvas.width = innerWidth;
+
+            var ball = {
+                radius: Math.random()*1.5,
+                color: 'black',
+                draw: function() {
+                    ctx.beginPath();
+                    ctx.arc(Math.random() * innerWidth, Math.random() * innerHeight, this.radius, 0, Math.PI * 2, true);
+                    ctx.closePath();
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            };
+
+            //star.draw();
+            for(let count = 0; count < numberOfStars; count++)
+            {
+                ball.draw();
+            }
+            ball.draw();
         };
-
-        var earth = new Image();
-        earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
-
-        function gc() {
-            var s = "0123456789ABCDEF";
-            var c = "#";
-            for (var i = 0; i < 6; i++) {
-                c += s[Math.ceil(Math.random() * 15)]
-            }
-            return "#99ccff"
-        }
-        var a = [];
-        window.onload = function myfunction() {
-            cn = document.getElementById('canvasSection');
-            c = cn.getContext('2d');
-
-            for (var i = 0; i < 1; i++) {
-                var r = 200;
-                var x = Math.random() * (innerWidth - 2 * r) + r;
-                var y = Math.random() * (innerHeight - 2 * r) + r;
-                var t = new ob(innerWidth / 2,innerHeight / 2,35,"red",Math.random() * 200 + 20,0.0005);
-                a.push(t);
-            }
-            //cn.style.backgroundColor = "#700bc8";
-
-            c.lineWidth = "300";
-            c.globalAlpha = 3;
-            resize();
-            anim()
-        }
-        window.onresize = function() {
-
-            resize();
-
-        }
-        function resize() {
-            cn.height = innerHeight;
-            cn.width = innerWidth;
-            var counter = 0;
-            for (var i = 0; i < 38000; i++) {
-                var r = 200;
-                var x = (Math.random() * (1 - 0.8) + 0.8).toFixed(4) * (innerWidth - 2 * r) + r;
-                var y = (Math.random() * (1 - 0.8) + 0.8).toFixed(4) * (innerHeight - 2 * r) + r;
-                if(counter >= 0) {
-                    a[i] = new ob(1, 1, 50, gc(), Math.random() * 5 + 200, 0.0005);
-                    counter++;
-                }
-                if(counter > 1000){
-                    counter++
-                    a[i] = new ob(1, 1, 50, "#ffffff", Math.random() * 3 + 200, 0.0005);
-                }
-                if(counter > 1400)
-                {
-                    counter = 0;
-                }
-            }
-            //  a[0] = new ob(innerWidth / 2, innerHeight / 2, 40, "red", 0.05, 0.05);
-            //a[0].dr();
-        }
-        function ob(x, y, r, cc, o, s) {
-            this.x = x;
-            this.y = y;
-            this.r = r;
-            this.cc = cc;
-            this.theta = Math.random() * Math.PI * 2;
-            this.s = s;
-            this.o = o;
-            this.t = (Math.random() * (0.7 - 0.5) + 0.5).toFixed(4) * innerHeight * 2;
-
-            this.dr = function() {
-                const ls = {
-                    x: this.x,
-                    y: this.y
-                };
-                this.theta += this.s;
-                this.x = m.x + Math.cos(this.theta) * this.t;
-                this.y = m.y + Math.sin(this.theta) * this.t;
-                c.beginPath();
-                //c.lineWidth = this.r;
-                ctx.moveTo(20, 20);
-                ctx.quadraticCurveTo(0, -100, 800, 0);
-                c.strokeStyle = this.cc;
-                c.fillStyle = this.cc;
-                c.fill();
-                c.stroke();
-                c.closePath();
-
-            }
-        }
-        function anim() {
-            requestAnimationFrame(anim);
-            var my_gradient = c.createLinearGradient(0, 0, 0, 170);
-            my_gradient.addColorStop(0, "black");
-            my_gradient.addColorStop(1, "white");
-            c.fillStyle = my_gradient;
-            c.lineJoin = "round";
-            c.fillRect(0, 0, cn.width, cn.height);
-            a.forEach(function(e, i) {
-                e.dr();
-            });
-        }
     </script>
 
     <canvas id="canvasSection">Error, canvas no supported</canvas>
