@@ -1,2 +1,13 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+
+#canvasSection { 
+    position: relative; 
+    width: 100%; 
+    height: 150px; 
+    z-index: -1;
+    text-align: center; 
+    margin-left: 0%;
+    background-color: rgb(60, 106, 233);
+}
