@@ -54,3 +54,5 @@ plugins:
 
 exclude: ['node_modules']
 destination: public
+
+future: true

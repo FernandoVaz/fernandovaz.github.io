@@ -1,42 +1,97 @@
 <header class="site-header">
 
-    <script type="text/javascript">
-        window.onload = function() {
-            var canvas = document.getElementById('canvasSection');
-            var ctx = canvas.getContext('2d');
-            var numberOfStars = 300;
-            canvas.height = innerHeight;
-            canvas.width = innerWidth;
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" integrity="sha512-LF8ZB1iTwi4Qvkm4pekHG4a437Y9Af5ZuwbnW4GTbAWQeR2E4KW8WF+xH8b9psevV7wIlDMx1MH9YfPqgKhA/Q==" crossorigin="anonymous"></script>
+  <script type="text/javascript">
 
-            var ball = {
-                radius: Math.random()*1.5,
-                color: 'white',
-                draw: function() {
-                    ctx.beginPath();
-                    ctx.arc(Math.random() * innerWidth, Math.random() * innerHeight, this.radius, 0, Math.PI * 2, true);
-                    ctx.closePath();
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-            };
+      window.onload = function() {
 
+          const canvas = document.getElementById("canvasSection");
+          const c = canvas.getContext("2d");
+          const gui = new dat.GUI();
 
+          const wavelength = 0.05;
+          const amplitude = 1;
 
-            //star.draw();
-            for(let count = 0; count < numberOfStars; count++)
-            {
-                ball.draw();
+          canvas.width = innerWidth;
+          canvas.height = innerHeight;
+
+          console.log(canvas.height);
+
+          const halfCanvas = Math.round(canvas.height/2);
+          const canvasSize = Math.round(canvas.width);
+
+          const wave = {
+            wavelength: 0.05,
+            amplitude: 1,
+            y: halfCanvas,
+            frequency: 0.01
+          };
+
+          const strokeColor = {
+            h: 200,
+            s: 50,
+            l: 50
+          };
+
+          const backColor = {
+            r: 0,
+            g: 0,
+            b: 0,
+            a: 0.04
+          }
+
+          const waveFolder = gui.addFolder('wave');
+          const strokeColorFolder = gui.addFolder('strokeColor');
+          const backgroundColorFolder = gui.addFolder('backColor');
+          
+          waveFolder.add(wave, 'y', 0, canvas.height);
+          waveFolder.add(wave, 'wavelength', -wavelength, wavelength);
+          waveFolder.add(wave, 'amplitude', 0.01, amplitude);
+          waveFolder.add(wave, 'frequency', 0.01, 1);
+
+          strokeColorFolder.add(strokeColor, 'h', 0, 255);
+          strokeColorFolder.add(strokeColor, 's', 0, 50);
+          strokeColorFolder.add(strokeColor, 'l', 0, 50);
+          
+          backgroundColorFolder.add(backColor, 'r', 0, 255);
+          backgroundColorFolder.add(backColor, 'g', 0, 255);
+          backgroundColorFolder.add(backColor, 'b', 0, 255);
+          backgroundColorFolder.add(backColor, 'a', 0, 1);
+          
+
+          console.log(halfCanvas);
+
+          //c.lineTo(canvasSize, halfCanvas);
+          let increment = wave.frequency;
+          function animate() {
+            requestAnimationFrame(animate);
+
+            c.fillStyle = `rgba(${backColor.r}, ${backColor.g}, ${backColor.b}, ${backColor.a})`;
+            c.fillRect(0, 0, canvas.width, canvas.height);
+            c.beginPath();
+            c.moveTo(0, halfCanvas);
+
+            // The multiplication part means that the sine wave length size while the sum redirects the center of sine wave
+            for (let i = 0; i < canvasSize; i++) {
+              c.lineTo(i, wave.y * Math.sin(i * wave.wavelength + increment) * wave.amplitude  * Math.sin(increment) + halfCanvas); 
             }
-            //ball.draw();
-        };
-    </script>
+
+            c.strokeStyle = `hsl(${strokeColor.h}, ${strokeColor.s}%, ${strokeColor.l}%)`;
+            c.stroke();
+            increment += wave.frequency;
+          }
+          
+          animate();
+      };
+
+  </script>
 
     <canvas id="canvasSection">Error, canvas no supported</canvas>
     <div class="wrapper">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <!--<a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>-->
 
         {%- if titles_size > 0 -%}
         <!-- <nav class="site-nav">

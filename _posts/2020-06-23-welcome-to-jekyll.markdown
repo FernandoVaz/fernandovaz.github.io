@@ -2,10 +2,14 @@
 layout: post
 title:  "Hello World Blog"
 date:   2020-06-23 22:40:06 -0300
-categories: Basic stuff
+categories: Intro
 ---
+
 ### Preface ###
-Dor e sofrimento esse tal de Jekyll;
+Post inicial testando HTML
+
+
+<div id="root"></div>
 
 [bundler.io]: https://bundler.io
 [homebrew install]: https://brew.sh/

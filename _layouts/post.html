@@ -26,6 +26,12 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  {% for js in page.jsarr %}
+     <script type="text/javascript">
+     {% include {{ js }} %}
+     </script>
+ {% endfor %}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>

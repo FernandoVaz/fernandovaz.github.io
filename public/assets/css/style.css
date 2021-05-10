@@ -136,7 +136,7 @@ table td { border: 1px solid #e8e8e8; }
 @media screen and (max-width: 800px) { table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar; } }
 
 /** Site header */
-.site-header { border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; line-height: 54px; position: relative; }
+.site-header { border-top: 5px solid #ffffff; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; line-height: 54px; position: relative; }
 
 .site-title { font-size: 2.025rem; letter-spacing: 0px; font-family: Noe Display, Merriweather, Georgia, serif; font-weight: bold; text-align: center; }
 @media screen and (max-width: 600px) { .site-title { padding-right: 10px; } }
@@ -145,7 +145,7 @@ table td { border: 1px solid #e8e8e8; }
 .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { float: right; width: 36px; height: 26px; line-height: 0; padding-top: 10px; text-align: center; }
-.site-nav .menu-icon > svg path { fill: #424242; }
+.site-nav .menu-icon > svg path { fill: #ffffff; }
 .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer; }
 .site-nav input ~ .trigger { clear: both; display: none; }
 .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; }
@@ -227,4 +227,28 @@ table td { border: 1px solid #e8e8e8; }
 
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (30px / 2)); } }
-#canvasSection { position: relative; width: 100%; height: 150px; z-index: -1; text-align: center; margin-left: 0%; background-color: #3c6ae9; }
+#canvasSection { position: relative; width: 100%; height: 150px; z-index: -1; text-align: center; margin-left: 0%; background-color: white; }
+
+#starShowerCanvas { position: relative; width: 100%; height: 550px; z-index: -1; text-align: center; margin-left: 0%; background-color: white; }
+
+#starShowerIframe { position: relative; width: 100%; height: 550px; z-index: -1; text-align: center; margin-left: 0%; background-color: white; border-style: none; }
+
+/** Components CSS */
+#teste { color: blue !important; }
+
+.teste { color: blue; }
+
+/* The Modal (background) */
+.markdownHeaderModal { display: none; /* Hidden by default */ position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: black; /* Fallback color */ background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */ }
+
+/* Modal Content/Box */
+.markdownHeaderModal-content { background-color: #fefefe; margin: 15% auto; /* 15% from the top and centered */ padding: 20px; border: 1px solid #888; width: 80%; /* Could be more or less, depending on screen size */ }
+
+/* The Close Button */
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+
+.close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+
+/* Add Animation */
+@keyframes animatetop { from { top: -300px; opacity: 0; }
+  to { top: 0; opacity: 1; } }

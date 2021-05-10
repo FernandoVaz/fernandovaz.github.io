@@ -3,17 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>About | Logging and thinking</title>
+<title>Canvas test | Logging and thinking</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="Canvas test" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
-<meta property="og:description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
-<link rel="canonical" href="http://localhost:4000/about/" />
-<meta property="og:url" content="http://localhost:4000/about/" />
+<meta name="description" content="Star Shower Canvas" />
+<meta property="og:description" content="Star Shower Canvas" />
+<link rel="canonical" href="http://localhost:4000/canvas/2021/05/02/star-shower-post.html" />
+<meta property="og:url" content="http://localhost:4000/canvas/2021/05/02/star-shower-post.html" />
 <meta property="og:site_name" content="Logging and thinking" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-02T22:40:06-03:00" />
 <script type="application/ld+json">
-{"description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","headline":"About","url":"http://localhost:4000/about/","@type":"WebSite","name":"Logging and thinking","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/canvas/2021/05/02/star-shower-post.html"},"description":"Star Shower Canvas","headline":"Canvas test","dateModified":"2021-05-02T22:40:06-03:00","datePublished":"2021-05-02T22:40:06-03:00","url":"http://localhost:4000/canvas/2021/05/02/star-shower-post.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Logging and thinking" />
 </head>
@@ -120,26 +122,114 @@
         </nav> --></div>
 </header><main class="page-content" aria-label="Content">
       <div class="wrapper">         
-        <article class="post">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Canvas test</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-05-02T22:40:06-03:00" itemprop="datePublished">
+        May 2, 2021
+      </time></p>
   </header>
 
-  <div class="post-content">
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+  
+     <script type="text/javascript">
+     
+     </script>
+ 
+     <script type="text/javascript">
+     function loadStarCanvas(){
+    //alert('hello');
+    const starFrame = document.getElementById('starShowerIframe');
+    var iframeDiv = starFrame.contentWindow.document;
+    iframeDiv.body.innerHTML += '<canvas id="starShowerCanvas" onload="doStuff();"></canvas>';
+    doStuff();
+}
 
-<p>You can find the source code for Minima at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/minima">minima</a></p>
 
-<p>You can find the source code for Jekyll at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+function doStuff() {
 
+    //alert('teste');
+    const starFrame = document.getElementById('starShowerIframe');
+    const starCanvas = starFrame.contentWindow.document.getElementById('starShowerCanvas');
+    const starCtx = starCanvas.getContext("2d");
 
-  </div>
+    starCanvas.width = 700;
+    starCanvas.height = 500;
 
+    addEventListener('resize', () => {
+        starCanvas.width = 700;
+        starCanvas.height = 500;
+
+        init();
+    });
+
+    function Star(x, y, radius, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.velocity = {
+            x: 0,
+            y: 3
+        };
+        this.gravity = 1;
+        this.friction = 0.8;
+    }
+
+    Star.prototype.draw = function() {
+        starCtx.beginPath();
+        //This tells us this creates an Circle
+        starCtx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+        starCtx.fillStyle = this.color;
+        starCtx.fill();
+        starCtx.closePath();
+    }
+
+    Star.prototype.update = function() {
+        this.draw();
+
+        if(this.y + this.radius + this.velocity.y > starCanvas.height) {
+            this.velocity.y = - this.velocity.y * this.friction;
+        } else {
+            this.velocity.y += this.gravity;
+        }
+
+        this.y += this.velocity.y;
+    }
+
+    // Implementation
+    let stars;
+    function init() {
+        stars = [];
+
+        for (let i = 0; i < 1; i++) {
+            stars.push(new Star(Math.round(starCanvas.width / 2), Math.round(starCanvas.height / 2), 30, 'blue'));
+        }
+    }
+
+    function animate() {
+        starFrame.contentWindow.requestAnimationFrame(animate);
+        starCtx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+
+        //console.log('teste');
+        stars.forEach(object => {
+            object.update()
+        });
+    }
+
+    init();
+    animate();
+};
+     </script>
+ 
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="star-shower-canvas">Star Shower Canvas</h1>
+<iframe id="starShowerIframe" onload="loadStarCanvas();">
+     <!--<canvas id='starShowerCanvas' onload="doStuff();"></canvas>-->
+</iframe>
+
+  </div><a class="u-url" href="/canvas/2021/05/02/star-shower-post.html" hidden></a>
 </article>
 
       </div>
