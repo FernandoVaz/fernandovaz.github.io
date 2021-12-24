@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T09:12:09-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Logging and thinking</title><subtitle>This website contains some weird posts about random stuff and technologies, viewer discretion is advised.</subtitle><entry><title type="html">How to run and debug this server</title><link href="http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll.html" rel="alternate" type="text/html" title="How to run and debug this server" /><published>2021-12-24T22:40:06-03:00</published><updated>2021-12-24T22:40:06-03:00</updated><id>http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll.html">&lt;h3 id=&quot;preface&quot;&gt;Preface&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-24T09:26:16-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Logging and thinking</title><subtitle>This website contains some weird posts about random stuff and technologies, viewer discretion is advised.</subtitle><entry><title type="html">How to run and debug this server</title><link href="http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll.html" rel="alternate" type="text/html" title="How to run and debug this server" /><published>2021-12-24T22:40:06-03:00</published><updated>2021-12-24T22:40:06-03:00</updated><id>http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/tutorial/2021/12/24/welcome-to-jekyll.html">&lt;h3 id=&quot;preface&quot;&gt;Preface&lt;/h3&gt;
 &lt;p&gt;Initial post explaining how to build and start this project&lt;/p&gt;
 
 &lt;p&gt;All you need is to run&lt;/p&gt;
@@ -13,5 +13,22 @@
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle update github-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;References:
-&lt;a href=&quot;https://bundler.io&quot;&gt;bundler.io&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Preface Initial post explaining how to build and start this project</summary></entry></feed>
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bundler.io&quot;&gt;bundler.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://brew.sh/&quot;&gt;homebrew install&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;jekyll-docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;jekyll-gh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;jekyll-talk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackify.com/install-ruby-on-your-mac-everything-you-need-to-get-going/&quot;&gt;ref-slackify-1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/20percentwork/creating-your-blog-for-free-using-jekyll-github-pages-dba37272730a&quot;&gt;ref-jekyllinstall-2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;ref-jekylldocs-4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/showcase/&quot;&gt;ref-jekyllshowcases-5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/8146249/jekyll-command-not-found&quot;&gt;ref-jekyll-troubleshooting-6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages/about-jekyll-build-errors-for-github-pages-sites&quot;&gt;ref-jekyll-troubleshooting-7&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll&quot;&gt;ref-jekyll-troubleshooting-8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jarlowrey.com/blog/github-pages-custom-domain&quot;&gt;ref-gitpages-9&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;ref-githubpages-12&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://talk.jekyllrb.com/t/how-to-install-github-pages-with-jekyll/3510&quot;&gt;ref-gitpagestroubleshooting-10&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/11577147/how-to-fix-http-404-on-github-pages#:~:text=Just%20wait%20about%20ten%20minutes,the%20problem%20at%20their%20end.&quot;&gt;ref-gitpagestroubleshooting-11&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Preface Initial post explaining how to build and start this project</summary></entry></feed>
