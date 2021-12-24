@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Logging and thinking" />
 <script type="application/ld+json">
-{"description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","headline":"Logging and thinking","url":"http://localhost:4000/","@type":"WebSite","name":"Logging and thinking","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/","name":"Logging and thinking","headline":"Logging and thinking","description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","@type":"WebSite","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Logging and thinking" />
 </head>
@@ -26,15 +26,13 @@
 
           const canvas = document.getElementById("canvasSection");
           const c = canvas.getContext("2d");
-          const gui = new dat.GUI();
+          //const gui = new dat.GUI();
 
           const wavelength = 0.05;
           const amplitude = 1;
 
           canvas.width = innerWidth;
           canvas.height = innerHeight;
-
-          console.log(canvas.height);
 
           const halfCanvas = Math.round(canvas.height/2);
           const canvasSize = Math.round(canvas.width);
@@ -59,28 +57,24 @@
             a: 0.04
           }
 
-          const waveFolder = gui.addFolder('wave');
-          const strokeColorFolder = gui.addFolder('strokeColor');
-          const backgroundColorFolder = gui.addFolder('backColor');
+          // const waveFolder = gui.addFolder('wave');
+          // const strokeColorFolder = gui.addFolder('strokeColor');
+          // const backgroundColorFolder = gui.addFolder('backColor');
           
-          waveFolder.add(wave, 'y', 0, canvas.height);
-          waveFolder.add(wave, 'wavelength', -wavelength, wavelength);
-          waveFolder.add(wave, 'amplitude', 0.01, amplitude);
-          waveFolder.add(wave, 'frequency', 0.01, 1);
+          // waveFolder.add(wave, 'y', 0, canvas.height);
+          // waveFolder.add(wave, 'wavelength', -wavelength, wavelength);
+          // waveFolder.add(wave, 'amplitude', 0.01, amplitude);
+          // waveFolder.add(wave, 'frequency', 0.01, 1);
 
-          strokeColorFolder.add(strokeColor, 'h', 0, 255);
-          strokeColorFolder.add(strokeColor, 's', 0, 50);
-          strokeColorFolder.add(strokeColor, 'l', 0, 50);
+          // strokeColorFolder.add(strokeColor, 'h', 0, 255);
+          // strokeColorFolder.add(strokeColor, 's', 0, 50);
+          // strokeColorFolder.add(strokeColor, 'l', 0, 50);
           
-          backgroundColorFolder.add(backColor, 'r', 0, 255);
-          backgroundColorFolder.add(backColor, 'g', 0, 255);
-          backgroundColorFolder.add(backColor, 'b', 0, 255);
-          backgroundColorFolder.add(backColor, 'a', 0, 1);
+          // backgroundColorFolder.add(backColor, 'r', 0, 255);
+          // backgroundColorFolder.add(backColor, 'g', 0, 255);
+          // backgroundColorFolder.add(backColor, 'b', 0, 255);
+          // backgroundColorFolder.add(backColor, 'a', 0, 1);
           
-
-          console.log(halfCanvas);
-
-          //c.lineTo(canvasSize, halfCanvas);
           let increment = wave.frequency;
           function animate() {
             requestAnimationFrame(animate);
@@ -125,28 +119,10 @@
 
 
   <ul class="post-list"><li>
-        <span class="post-meta">May 2, 2021</span>
+        <span class="post-meta">Dec 24, 2021</span>
         <h3>
-          <a class="post-link" href="/canvas/2021/05/02/star-shower-post.html">
-            Canvas test
-          </a>
-        </h3></li><li>
-        <span class="post-meta">Apr 23, 2021</span>
-        <h3>
-          <a class="post-link" href="/canvas/2021/04/23/markdown-sheet.html">
-            Markdown Cheat Sheet
-          </a>
-        </h3></li><li>
-        <span class="post-meta">Apr 23, 2021</span>
-        <h3>
-          <a class="post-link" href="/canvas/2021/04/23/canvas-post.html">
-            Canvas Animation and other cool stuff
-          </a>
-        </h3></li><li>
-        <span class="post-meta">Jun 23, 2020</span>
-        <h3>
-          <a class="post-link" href="/intro/2020/06/23/welcome-to-jekyll.html">
-            Hello World Blog
+          <a class="post-link" href="/tutorial/2021/12/24/welcome-to-jekyll.html">
+            How to run and debug this server
           </a>
         </h3></li></ul>
 
