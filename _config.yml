@@ -56,3 +56,5 @@ exclude: ['node_modules']
 destination: public
 
 future: true
+
+markdown: CommonMarkGhPages
