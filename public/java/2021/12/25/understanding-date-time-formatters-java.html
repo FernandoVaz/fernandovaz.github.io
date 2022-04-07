@@ -2,20 +2,22 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Understanding Java Date Time | Logging and thinking</title>
-<meta name="generator" content="Jekyll v3.8.7" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Understanding Java Date Time" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Properties" />
-<meta property="og:description" content="Properties" />
+<meta name="description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
+<meta property="og:description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
 <link rel="canonical" href="http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html" />
 <meta property="og:url" content="http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html" />
 <meta property="og:site_name" content="Logging and thinking" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-12-25T22:40:06-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Understanding Java Date Time" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html","headline":"Understanding Java Date Time","dateModified":"2021-12-25T22:40:06-03:00","datePublished":"2021-12-25T22:40:06-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html"},"description":"Properties","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-12-25T22:40:06-03:00","datePublished":"2021-12-25T22:40:06-03:00","description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","headline":"Understanding Java Date Time","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html"},"url":"http://localhost:4000/java/2021/12/25/understanding-date-time-formatters-java.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Logging and thinking" />
 </head>
@@ -172,8 +174,7 @@ dateToFormat.format(DateTimeFormatter.ISO_ORDINAL_DATE); // '2012-337'
 DateTimeFormatter.ofPattern(&quot;dd MM yy&quot;); //04 jan 22
 DateTimeFormatter.ofPattern(&quot;dd anyString MM yy&quot;); //04 anyString jan 22
 </code></pre>
-<details>
-    <summary>List of zoneIds (According to wikipedia)</summary>
+<!-- raw HTML omitted -->
 <ul>
 <li>Africa/Abidjan</li>
 <li>Africa/Accra</li>
@@ -771,7 +772,7 @@ DateTimeFormatter.ofPattern(&quot;dd anyString MM yy&quot;); //04 anyString jan 
 <li>WET</li>
 <li>Zulu</li>
 </ul>
-</details>
+<!-- raw HTML omitted -->
 <h3 id="references">References</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia-Timezones</a></li>
