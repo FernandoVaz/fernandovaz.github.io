@@ -3,20 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Logging and thinking | This website contains some weird posts about random stuff and technologies, viewer discretion is advised.</title>
+<title>Understanding ElasticSearch Queries | Logging and thinking</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Logging and thinking" />
+<meta property="og:title" content="Understanding ElasticSearch Queries" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
 <meta property="og:description" content="This website contains some weird posts about random stuff and technologies, viewer discretion is advised." />
-<link rel="canonical" href="http://localhost:4000/404.html" />
-<meta property="og:url" content="http://localhost:4000/404.html" />
+<link rel="canonical" href="http://localhost:4000/java/2022/03/11/understanding-elasticsearch-query.html" />
+<meta property="og:url" content="http://localhost:4000/java/2022/03/11/understanding-elasticsearch-query.html" />
 <meta property="og:site_name" content="Logging and thinking" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-11T22:40:06-03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Logging and thinking" />
+<meta property="twitter:title" content="Understanding ElasticSearch Queries" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","headline":"Logging and thinking","url":"http://localhost:4000/404.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-03-11T22:40:06-03:00","datePublished":"2022-03-11T22:40:06-03:00","description":"This website contains some weird posts about random stuff and technologies, viewer discretion is advised.","headline":"Understanding ElasticSearch Queries","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/java/2022/03/11/understanding-elasticsearch-query.html"},"url":"http://localhost:4000/java/2022/03/11/understanding-elasticsearch-query.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Logging and thinking" />
 </head>
@@ -117,26 +118,56 @@
         </nav> --></div>
 </header><main class="page-content" aria-label="Content">
       <div class="wrapper">         
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Understanding ElasticSearch Queries</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-03-11T22:40:06-03:00" itemprop="datePublished">
+        Mar 11, 2022
+      </time></p>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="elastic-search-kibana">Elastic Search Kibana</h3>
+<p>Kibana is a dashboard to write queries on an elastic database, and is very useful to test queries before implementing them on any code. Here is a very brief explanation of what everything does:</p>
+<pre><code>GET idx.anyindex/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must&quot;: [
+                {}
+            ],
+            &quot;must_not&quot;: [
+                {}
+            ],
+            &quot;should&quot;: [
+                {}
+            ],
+            &quot;filter&quot;: [
+                {}
+            ]
+        }
+    }
+}
+</code></pre>
+<p>The idea is, we just compare each query type to a logical operator in order to clear things up when you write queries.</p>
+<p>The first syntax that we need to observe is GET idx.anyindex/_search, this means get documents from the index &quot;anyindex&quot;.
+At the beginning of the query we specify the type of the logical operation resolution &quot;bool&quot;, this means if true will get the documents and false will get none of them. In sequence, the code will have four keywords that are fundamental in building the query.</p>
+<p>&quot;must&quot; equals to the logical operation of AND, it means that every query inside that keyword must return true in order to must be true.</p>
+<p>&quot;must_not&quot; equals to the logical operation NOT</p>
+<p>&quot;should&quot; is equals to the logical operation OR</p>
+<p>&quot;filter&quot; is equals to the logical operation FILTER (it has not logical operation haha)</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia-Timezones</a></li>
+<li><a href="youtube.com/watch?v=0XgdX5hDL4U">Maaike-Youtube-vid</a></li>
+</ul>
+
+  </div><a class="u-url" href="/java/2022/03/11/understanding-elasticsearch-query.html" hidden></a>
+  <a class="u-url" href="http://localhost:4000">Home page</a>
+</article>
 
       </div>
     </main>
