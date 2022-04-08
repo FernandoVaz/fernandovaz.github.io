@@ -2,7 +2,7 @@
 layout: post
 title:  "Understanding ElasticSearch Queries"
 date:   2022-03-11 22:40:06 -0300
-categories: Java
+categories: Elasticsearch
 ---
 
 ### Elastic Search Kibana ###
