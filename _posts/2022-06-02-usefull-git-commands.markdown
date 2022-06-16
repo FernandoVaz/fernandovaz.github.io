@@ -1,4 +1,4 @@
-Throwing away your git changes:
+Throwing away your git changes
 
 ```
 git fetch origin
@@ -12,3 +12,12 @@ git fetch origin
 git pull -X theirs
 ```
 
+Cherry pick:
+
+https://www.atlassian.com/git/tutorials/cherry-pick
+
+
+```
+git checkout branch_you_want_the_commit_on
+git cherry-pick commitSha
+```
