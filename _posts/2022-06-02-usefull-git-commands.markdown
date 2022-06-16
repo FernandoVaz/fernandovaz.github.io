@@ -12,6 +12,14 @@ git fetch origin
 git pull -X theirs
 ```
 
+
+Dont care about master, just update looking your changes
+
+```
+git fetch origin
+git pull -X ours
+```
+
 Cherry pick:
 
 https://www.atlassian.com/git/tutorials/cherry-pick
