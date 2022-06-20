@@ -5,7 +5,7 @@ date:   2022-01-04 22:40:06 -0300
 categories: Java
 ---
 
-### Introduction to Generics ###
+### Useful Generics ###
 
 ### References ###
 * [Wikipedia-Timezones]
