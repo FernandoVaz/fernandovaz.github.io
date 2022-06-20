@@ -10,6 +10,7 @@ Git ammend to create patches for commits.
 Git push to push those patches.
 
 Git patch reset ~1 soft // Remove uncommited stuff
+
 Git patch reset ~1 hard // Remove everything
 
 ### Setting up a local gerrit to try out
