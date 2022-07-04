@@ -11,4 +11,8 @@ Cpp binding
 https://stackoverflow.com/questions/29609866/stdbind-makes-no-sense-to-me-whatsoever
 
 
+Cpp define
+https://docs.microsoft.com/en-us/cpp/preprocessor/hash-define-directive-c-cpp?view=msvc-170
+
+
 ### References ###
