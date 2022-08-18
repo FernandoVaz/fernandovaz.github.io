@@ -40,15 +40,7 @@ public class GenericsType<T> {
 ## Javascript
 
 ```javascript
-function getitems() {
-
-	private T t;
-	
-	public T get(){
-		return this.t;
-	}
-	
-	public void set(T t1){
-		this.t=t1;
-	}
+function identity<T>(arg: T): T {
+	return arg;
+}
 ```
