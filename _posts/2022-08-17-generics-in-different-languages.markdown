@@ -2,7 +2,7 @@
 ## C++
 
 
-````
+```c++
 #include <iostream>
 #include <string>
 
@@ -18,11 +18,11 @@ int main() {
   return 0;
 }
 
-````
+```
 
 ## Java
 
-````
+```java
 public class GenericsType<T> {
 
 	private T t;
@@ -34,4 +34,21 @@ public class GenericsType<T> {
 	public void set(T t1){
 		this.t=t1;
 	}
-````
+}
+```
+
+## Javascript
+
+```javascript
+function getitems() {
+
+	private T t;
+	
+	public T get(){
+		return this.t;
+	}
+	
+	public void set(T t1){
+		this.t=t1;
+	}
+```
