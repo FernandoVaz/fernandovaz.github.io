@@ -1,3 +1,10 @@
+## Quick Definitions
+
+* Generics is an abstraction over types
+* Polymorphism is a sum-type pattern
+* Composition is a product-type pattern
+* Most OO tends to lean towards polymorphism
+
 
 ## C++
 
@@ -44,3 +51,5 @@ function identity<T>(arg: T): T {
 	return arg;
 }
 ```
+
+
