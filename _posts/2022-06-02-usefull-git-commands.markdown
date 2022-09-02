@@ -30,6 +30,14 @@ git checkout branch_you_want_the_commit_on
 git cherry-pick commitSha
 ```
 
+Git squashing commits:
+
+```
+TODO: Example with Squash commit
+git checkout branch_you_want_the_commit_on
+git cherry-pick commitSha
+```
+
 
 How git reset works in plain english:
 https://stackoverflow.com/questions/2530060/in-plain-english-what-does-git-reset-do
