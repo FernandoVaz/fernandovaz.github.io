@@ -4,6 +4,7 @@
 * Polymorphism is a sum-type pattern
 * Composition is a product-type pattern
 * Most OO tends to lean towards polymorphism
+* Obviously there are differences between generics from different languages, such as runtime and compile time works and so on
 
 
 ## C++
